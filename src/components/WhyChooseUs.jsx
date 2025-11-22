@@ -6,26 +6,36 @@ import {
   MessageCircle,
   Star,
   Users,
+  Lock,
+  Zap,
 } from "lucide-react";
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="features">
-      <div className="container mx-auto px-6">
-        {/* HEADLINE: Fokus pada Empati & Solusi */}
+    <section
+      className="py-24 bg-[#0f172a] relative overflow-hidden"
+      id="features"
+    >
+      {/* Background Glow Decoration */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* HEADLINE */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 font-bold text-xs rounded-full mb-4 uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-cyan-900/30 border border-cyan-700/50 text-cyan-400 font-bold text-xs rounded-full mb-6 uppercase tracking-wider">
+              <ShieldCheck size={14} />
               Values & Trust
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               Lebih Dari Sekadar <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                 Platform Trading.
               </span>
             </h2>
           </div>
-          <p className="text-slate-600 text-lg max-w-md leading-relaxed text-right md:text-left">
+          <p className="text-slate-400 text-lg max-w-md leading-relaxed text-right md:text-left border-l-4 border-slate-700 pl-6">
             Kami membangun ekosistem di mana keamanan dana dan pertumbuhan skill
             Anda adalah prioritas nomor satu.
           </p>
@@ -33,119 +43,125 @@ const WhyChooseUs = () => {
 
         {/* BENTO GRID LAYOUT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* CARD 1: SECURITY (Besar & Utama) - Menekankan Rasa Aman */}
-          <div className="md:col-span-2 bg-slate-50 rounded-[2rem] p-8 border border-slate-100 relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-              <ShieldCheck size={120} className="text-indigo-600" />
+          {/* CARD 1: SECURITY (Utama) */}
+          <div className="md:col-span-2 bg-[#1e293b] rounded-[2rem] p-8 border border-slate-700 relative overflow-hidden group hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/20">
+            {/* Background Icon Decoration */}
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Lock size={150} className="text-cyan-400" />
             </div>
+
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div className="mb-8">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-4 text-indigo-600">
-                  <ShieldCheck size={24} />
+                <div className="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center shadow-inner border border-slate-700 mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
+                  <ShieldCheck size={28} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                <h3 className="text-2xl font-bold text-white mb-3">
                   100% Aman & Tergulasi
                 </h3>
-                <p className="text-slate-600 max-w-md">
+                <p className="text-slate-400 max-w-md leading-relaxed">
                   Kami hanya bermitra dengan broker yang memiliki lisensi resmi
-                  Bappebti. Dana Anda disimpan di rekening terpisah (Segregated
-                  Account).
+                  <span className="text-white font-semibold"> Bappebti</span>.
+                  Dana Anda disimpan di rekening terpisah (Segregated Account)
+                  untuk keamanan maksimal.
                 </p>
               </div>
-              {/* Visual Trust Badge */}
-              <div className="bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-slate-200 inline-flex items-center gap-4 max-w-fit">
+
+              {/* Visual Trust Badge (Glassmorphism) */}
+              <div className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 inline-flex items-center gap-5 max-w-fit hover:bg-white/10 transition-colors">
                 <div className="flex flex-col">
-                  <span className="text-xs text-slate-400 font-bold uppercase">
+                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
                     Official Partner
                   </span>
-                  <span className="font-bold text-slate-800">
+                  <span className="font-bold text-white text-lg">
                     Bappebti & JFX
                   </span>
                 </div>
-                <div className="h-8 w-[1px] bg-slate-300"></div>
-                <div className="flex items-center gap-1 text-green-600 font-bold text-sm">
+                <div className="h-8 w-[1px] bg-slate-600"></div>
+                <div className="flex items-center gap-2 text-green-400 font-bold text-sm bg-green-400/10 px-3 py-1 rounded-full border border-green-400/20">
                   <ShieldCheck size={16} /> Verified
                 </div>
               </div>
             </div>
           </div>
 
-          {/* CARD 2: EDUCATION (Visual Video) - Menekankan Kemudahan Belajar */}
-          <div className="bg-slate-900 rounded-[2rem] p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700 opacity-20 group-hover:opacity-30 transition-opacity"></div>
+          {/* CARD 2: EDUCATION (Video) */}
+          <div className="bg-gradient-to-br from-slate-900 to-[#1e293b] rounded-[2rem] p-8 text-white relative overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-slate-700">
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-50"></div>
+
             <div className="relative z-10 flex flex-col h-full justify-between">
               <div>
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4">
-                  <PlayCircle size={24} className="text-white" />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/10 text-cyan-300">
+                  <PlayCircle size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Akademi Gratis</h3>
                 <p className="text-slate-300 text-sm">
-                  Akses 50+ jam materi video premium tanpa biaya.
+                  Akses 50+ jam materi video premium. Dari pemula hingga expert.
                 </p>
               </div>
 
               {/* Mockup Video Player Kecil */}
-              <div className="mt-6 bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10 flex items-center gap-3 cursor-pointer hover:bg-white/20 transition-colors">
-                <div className="w-10 h-10 rounded-full bg-white text-indigo-600 flex items-center justify-center flex-shrink-0">
+              <div className="mt-6 bg-black/40 rounded-xl p-3 backdrop-blur-sm border border-white/10 flex items-center gap-3 cursor-pointer hover:bg-black/60 transition-colors group-hover:translate-x-1">
+                <div className="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-cyan-500/40">
                   <PlayCircle size={20} fill="currentColor" />
                 </div>
                 <div>
-                  <p className="text-xs text-indigo-200 font-medium">
-                    Sedang ditonton
+                  <p className="text-[10px] text-cyan-300 font-medium uppercase tracking-wider">
+                    Now Playing
                   </p>
-                  <p className="text-sm font-bold">Strategi Scalping M15</p>
+                  <p className="text-sm font-bold text-white">
+                    Strategi Scalping M15
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* CARD 3: SIGNAL (Profit Oriented) - Menekankan Hasil */}
-          <div className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-            <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center mb-4 text-indigo-600">
-              <TrendingUp size={24} />
+          {/* CARD 3: SIGNAL (Profit Visual) */}
+          <div className="bg-[#1e293b] rounded-[2rem] p-8 border border-slate-700 shadow-sm hover:shadow-xl hover:border-green-500/30 transition-all duration-300 group">
+            <div className="w-14 h-14 bg-green-900/20 rounded-2xl flex items-center justify-center mb-6 text-green-400 border border-green-500/20">
+              <Zap size={28} />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">
-              Sinyal Akurat
-            </h3>
-            <p className="text-slate-600 text-sm mb-6">
-              Analisa teknikal harian dengan tingkat akurasi tinggi.
+            <h3 className="text-xl font-bold text-white mb-2">Sinyal Akurat</h3>
+            <p className="text-slate-400 text-sm mb-6">
+              Analisa teknikal harian dengan tingkat akurasi yang teruji data.
             </p>
 
-            {/* Visual Chart Mini */}
-            <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-bold text-slate-500">
+            {/* Visual Chart Mini (Dark Mode) */}
+            <div className="bg-[#0f172a] rounded-xl p-4 border border-slate-700 group-hover:border-green-500/30 transition-colors">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs font-bold text-slate-400">
                   Win Rate (Bulan Ini)
                 </span>
-                <span className="text-xs font-bold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full border border-green-400/20">
                   +12.4%
                 </span>
               </div>
-              <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                <div className="bg-indigo-600 h-full w-[78%] rounded-full"></div>
+              {/* Progress Bar */}
+              <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                <div className="bg-gradient-to-r from-green-600 to-green-400 h-full w-[78%] rounded-full shadow-[0_0_10px_rgba(74,222,128,0.5)]"></div>
               </div>
-              <p className="text-right text-xs font-bold text-indigo-600 mt-1">
+              <p className="text-right text-xs font-bold text-green-400 mt-2">
                 78% Profitable
               </p>
             </div>
           </div>
 
-          {/* CARD 4: COMMUNITY (Human Element) - Menekankan Kebersamaan */}
-          <div className="md:col-span-2 bg-indigo-600 rounded-[2rem] p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-            {/* Dekorasi Circle */}
-            <div className="absolute -right-10 -top-10 w-64 h-64 bg-white rounded-full opacity-10 blur-3xl"></div>
+          {/* CARD 4: COMMUNITY (Full Width) */}
+          <div className="md:col-span-2 bg-gradient-to-r from-blue-900 to-[#0f172a] rounded-[2rem] p-8 text-white relative overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-blue-800/50">
+            {/* Dekorasi */}
+            <div className="absolute -right-10 -top-10 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px]"></div>
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="flex-1">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 text-white">
-                  <Users size={24} />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 text-cyan-300 border border-white/10">
+                  <Users size={28} />
                 </div>
-                <h3 className="text-2xl font-bold mb-2">
+                <h3 className="text-2xl font-bold mb-3">
                   Komunitas Anti-Toxic
                 </h3>
-                <p className="text-indigo-100 mb-6">
+                <p className="text-blue-100 mb-6 text-sm leading-relaxed max-w-sm">
                   Bergabunglah dengan ribuan trader yang saling mendukung. Tidak
-                  ada pertanyaan "bodoh" di sini.
+                  ada pertanyaan "bodoh" di sini. Kita profit bersama.
                 </p>
 
                 <div className="flex items-center gap-4">
@@ -153,12 +169,12 @@ const WhyChooseUs = () => {
                     {[1, 2, 3, 4].map((i) => (
                       <img
                         key={i}
-                        src={`https://i.pravatar.cc/100?img=${i + 20}`}
+                        src={`https://i.pravatar.cc/100?img=${i + 25}`}
                         alt="Member"
-                        className="w-10 h-10 rounded-full border-2 border-indigo-600"
+                        className="w-10 h-10 rounded-full border-2 border-[#0f172a]"
                       />
                     ))}
-                    <div className="w-10 h-10 rounded-full bg-white text-indigo-600 flex items-center justify-center text-xs font-bold border-2 border-indigo-600">
+                    <div className="w-10 h-10 rounded-full bg-[#1e293b] text-cyan-400 flex items-center justify-center text-xs font-bold border-2 border-cyan-500/30">
                       +2k
                     </div>
                   </div>
@@ -166,30 +182,33 @@ const WhyChooseUs = () => {
                     <p className="flex items-center gap-1">
                       <Star
                         size={14}
-                        className="fill-yellow-400 text-yellow-400"
+                        className="fill-yellow-500 text-yellow-500"
                       />
                       4.9/5 Rating
                     </p>
-                    <p className="text-indigo-200 text-xs">dari member aktif</p>
+                    <p className="text-blue-200 text-xs">dari member aktif</p>
                   </div>
                 </div>
               </div>
 
-              {/* Chat Bubble Visual - Menambah kesan "Human" */}
-              <div className="bg-white text-slate-800 p-4 rounded-t-2xl rounded-bl-2xl rounded-br-sm shadow-lg max-w-xs transform md:rotate-2 group-hover:rotate-0 transition-transform">
+              {/* Chat Bubble Visual (Dark Glassmorphism) */}
+              <div className="bg-[#1e293b]/90 backdrop-blur-md border border-slate-600 p-5 rounded-t-2xl rounded-bl-2xl rounded-br-sm shadow-xl max-w-xs transform md:rotate-2 group-hover:rotate-0 transition-transform duration-500">
                 <div className="flex items-start gap-3">
                   <img
                     src="https://i.pravatar.cc/100?img=12"
                     alt="User"
-                    className="w-10 h-10 rounded-full"
+                    className="w-10 h-10 rounded-full border border-slate-500"
                   />
                   <div>
-                    <p className="text-xs font-bold text-slate-500 mb-1">
-                      Dhani, Surabaya
+                    <p className="text-xs font-bold text-cyan-400 mb-1 flex items-center gap-1">
+                      Dhani, Surabaya{" "}
+                      <span className="text-slate-500 font-normal">
+                        • 2m ago
+                      </span>
                     </p>
-                    <p className="text-sm font-medium leading-snug">
+                    <p className="text-sm text-slate-200 font-medium leading-snug">
                       "Baru seminggu gabung udah ngerti cara baca candlestick.
-                      Mentornya sabar banget!"
+                      Mentornya sabar banget, gila!"
                     </p>
                   </div>
                 </div>
