@@ -104,7 +104,7 @@ const Header = () => {
                     isScrolled ? "h-0 opacity-0" : "h-auto opacity-100"
                   }`}
                 >
-                  By Bizshare Holdings
+                  By Bizshare
                 </span>
               </div>
             </div>
